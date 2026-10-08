@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Dice Roller</h1>
+    
+    <div class="controls">
+      <label for="diceCount">Number of Dice:</label>
+      <select id="diceCount">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <button id="rollBtn">Roll Dice</button>
+    </div>
+
+    <div id="diceContainer"></div>
+
+    <div class="stats">
+      <h2>Statistics</h2>
+      <ul id="statsList">
+        <li>1 : 0</li>
+        <li>2 : 0</li>
+        <li>3 : 0</li>
+        <li>4 : 0</li>
+        <li>5 : 0</li>
+        <li>6 : 0</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

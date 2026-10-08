@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <form class="modal__form" id="signupForm" novalidate>
+        <div class="form-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="email" required>
+            <span class="form-error" data-error="email"></span>
+        </div>
+        
+        <div class="form-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+            <span class="form-error" data-error="password"></span>
+        </div>
+        
+        <button type="submit" class="btn btn--primary modal__submit">Create account</button>
+        
+        <div id="statusNotification" class="status-success hidden">
+            LOGIN IN!
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+let name = "Husanboy Mahammadinov";
+let nameLength = name.length;
+let upperName = name.toUpperCase();
+let lowerName = name.toLowerCase();
+let dirtyInput = "   Husanboy Mahammadinov   ";
+let cleanName = dirtyInput.trim();
+let hasHusan = name.includes("Husanboy");
+let isH = name.startsWith("H");
+let isV = name.endsWith("v");
+let spaceIndex = name.indexOf(" ");
+let firstChar = name.charAt(0);
+let lastChar = name.at(-1);
+let firstName = name.slice(0, 8);
+let singleReplace = name.replace("Husanboy", "H.");
+let multipleReplace = name.replaceAll("a", "o");
+let nameParts = name.split(" ");
+let greeting = "Salom ".concat(name);

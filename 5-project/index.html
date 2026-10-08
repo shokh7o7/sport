@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDC BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>CDC BMI Calculator</h1>
+
+    <p class="subtitle">For children and teens ages 2–20</p>
+
+    <form id="bmiForm">
+
+        <div class="input-group">
+            <label for="age">Age</label>
+            <input
+                type="number"
+                id="age"
+                min="2"
+                max="20"
+                step="1"
+                placeholder="Enter age"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="sex">Sex</label>
+            <select id="sex" required>
+                <option value="">Select sex</option>
+                <option value="1">Boy</option>
+                <option value="2">Girl</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="height">Height (cm)</label>
+            <input
+                type="number"
+                id="height"
+                min="50"
+                max="250"
+                step="0.1"
+                placeholder="Enter height"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="weight">Weight (kg)</label>
+            <input
+                type="number"
+                id="weight"
+                min="2"
+                max="300"
+                step="0.1"
+                placeholder="Enter weight"
+                required
+            >
+        </div>
+
+        <button type="submit" id="calculateButton">
+            Calculate BMI
+        </button>
+
+    </form>
+
+    <div id="loading" class="loading">
+        Loading CDC data...
+    </div>
+
+    <div id="result"></div>
+
+    <p class="source">
+        Data source: CDC Growth Charts
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

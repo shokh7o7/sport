@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #1f2937;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    width: 700px;
+    max-width: 95%;
+
+    background: #374151;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+}
+
+h1{
+    margin-bottom: 30px;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice{
+    width: 140px;
+    height: 140px;
+
+    font-size: 60px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+.choice:hover{
+
+    transform:scale(1.08);
+}
+
+.choice span{
+
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.battle{
+    display: flex;
+    justify-content: space-around;
+
+    margin: 40px 0;
+}
+
+.battle p{
+
+    font-size: 60px;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 30px;
+}
+
+.scoreboard p{
+
+    font-size: 40px;
+}
+
+.round{
+    margin: 25px 0;
+    font-size: 22px;
+}
+
+#result{
+    height: 40px;
+}
+
+#restart{
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+.animate{
+    animation: shake .4s;
+}
+
+@keyframes shake{
+
+0%{transform:rotate(0deg);}
+0%{transform:rotate(10deg);}
+0%{transform:rotate(-10deg);}
+0%{transform:rotate(10deg);}
+0%{transform:rotate(0deg);}
+}

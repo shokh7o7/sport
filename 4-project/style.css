@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+    color: white;
+}
+
+.container{
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.controls{
+    margin-bottom: 25px;
+}
+
+select,
+button{
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+button{
+    cursor: pointer;
+    background: #4caf50;
+    color: white;
+}
+
+button:hover{
+    background: #43a047;
+}
+
+#diceContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    min-height: 120px;
+    margin: 20px 0;
+}
+
+.dice{
+    width: 80px;
+    height: 80px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.roll-animation {
+    animation: roll 0.4s ease-out;
+}
+
+@keyframes roll{
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    50%{
+        transform: rotate(180deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.stats{
+    margin-top: 20px;
+}
+
+.stats ul{
+    list-style: none;
+}
+
+.stats li{
+    margin: 8px 0;
+    font-size: 18px;
+}
