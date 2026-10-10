@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-logo">
+            <i class="fas fa-car"></i>
+            <span>Car Market</span>
+        </div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-box">
+            <div class="alert-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h3 id="alertTitle">Message</h3>
+            <p id="alertText">Something happened.</p>
+            <button id="alertBtn" class="alert-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="searchModal" class="search-modal">
+        <div class="search-box">
+            <div class="search-header">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search cars, brands, types...">
+                <button id="searchClose" class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">
+                    <i class="fas fa-car"></i>
+                    <p>Start typing to search...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="favModal" class="fav-modal">
+        <div class="fav-box">
+            <div class="fav-header">
+                <h3><i class="fas fa-heart"></i> Favorites</h3>
+                <button id="favClose" class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="fav-list" id="favList">
+                <div class="fav-empty">
+                    <i class="far fa-heart"></i>
+                    <p>No favorite cars yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carModal" class="car-modal">
+        <div class="car-modal-box">
+            <button id="carModalClose" class="search-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="car-modal-content" id="carModalContent">
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="iconandtext">
+            <i class="fas fa-car"></i>
+            <p>Car Market</p>
+        </div>
+
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button id="burgerBtn" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="icons">
+            <i class="fas fa-search" id="searchBtn"></i>
+            <i class="fas fa-heart" id="heartBtn"></i>
+            <span class="fav-count" id="favCount">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Find Your <span>Dream Car</span></h1>
+            <p>Thousands of cars to choose from. Best prices, trusted sellers, and fast delivery — all in one place.</p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary" data-action="browse">Browse Cars</a>
+                <a href="#" class="btn-secondary" data-action="learn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop&auto=format&q=80" alt="Car">
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="section-title">
+            <span>Our Collection</span>
+            <h2>Featured Cars</h2>
+            <p>Explore our hand-picked selection of premium vehicles.</p>
+        </div>
+
+        <div class="cars-grid">
+
+            <div class="car-card" data-name="BMW M4 Competition" data-price="78500" data-year="2024" data-type="Petrol" data-brand="BMW">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=400&fit=crop&auto=format&q=80" alt="BMW M4">
+                    <span class="car-badge">New</span>
+                    <button class="car-heart" type="button" data-car="BMW M4 Competition">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>BMW M4 Competition</h3>
+                    <p class="car-meta">2024 · 3,000 km · Petrol</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$78,500</span>
+                        <button class="car-btn" data-car="BMW M4 Competition">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card" data-name="Mercedes-Benz C-Class" data-price="54200" data-year="2023" data-type="Petrol" data-brand="Mercedes">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&h=400&fit=crop&auto=format&q=80" alt="Mercedes">
+                    <span class="car-badge">Hot</span>
+                    <button class="car-heart" type="button" data-car="Mercedes-Benz C-Class">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>Mercedes-Benz C-Class</h3>
+                    <p class="car-meta">2023 · 8,500 km · Petrol</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$54,200</span>
+                        <button class="car-btn" data-car="Mercedes-Benz C-Class">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card" data-name="Porsche 911 Turbo" data-price="198000" data-year="2024" data-type="Petrol" data-brand="Porsche">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop&auto=format&q=80" alt="Porsche">
+                    <button class="car-heart" type="button" data-car="Porsche 911 Turbo">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>Porsche 911 Turbo</h3>
+                    <p class="car-meta">2024 · 1,200 km · Petrol</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$198,000</span>
+                        <button class="car-btn" data-car="Porsche 911 Turbo">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card" data-name="Audi RS7 Sportback" data-price="112900" data-year="2023" data-type="Petrol" data-brand="Audi">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&h=400&fit=crop&auto=format&q=80" alt="Audi">
+                    <span class="car-badge">Sale</span>
+                    <button class="car-heart" type="button" data-car="Audi RS7 Sportback">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>Audi RS7 Sportback</h3>
+                    <p class="car-meta">2023 · 12,000 km · Petrol</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$112,900</span>
+                        <button class="car-btn" data-car="Audi RS7 Sportback">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card" data-name="Tesla Model S Plaid" data-price="89990" data-year="2024" data-type="Electric" data-brand="Tesla">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&h=400&fit=crop&auto=format&q=80" alt="Tesla">
+                    <span class="car-badge">EV</span>
+                    <button class="car-heart" type="button" data-car="Tesla Model S Plaid">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>Tesla Model S Plaid</h3>
+                    <p class="car-meta">2024 · 2,500 km · Electric</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$89,990</span>
+                        <button class="car-btn" data-car="Tesla Model S Plaid">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card" data-name="Range Rover Sport" data-price="96400" data-year="2023" data-type="Diesel" data-brand="Range Rover">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=600&h=400&fit=crop&auto=format&q=80" alt="Range Rover">
+                    <button class="car-heart" type="button" data-car="Range Rover Sport">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="car-info">
+                    <h3>Range Rover Sport</h3>
+                    <p class="car-meta">2023 · 15,000 km · Diesel</p>
+                    <div class="car-bottom">
+                        <span class="car-price">$96,400</span>
+                        <button class="car-btn" data-car="Range Rover Sport">View</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="featured-btn-wrap">
+            <a href="#" class="btn-primary" data-action="viewall">View All Cars</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-title">
+            <span>What We Offer</span>
+            <h2>Our Services</h2>
+            <p>Everything you need to buy, sell, or maintain your car — all in one place.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-car-side"></i>
+                </div>
+                <h3>Buy a Car</h3>
+                <p>Browse thousands of verified listings with detailed specs and photos.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3>Sell Your Car</h3>
+                <p>List your car in minutes and reach thousands of potential buyers.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Verified Sellers</h3>
+                <p>Every seller is checked and verified to keep your transactions safe.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Car Inspection</h3>
+                <p>Professional inspection service before you buy any vehicle.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <h3>Paperwork Help</h3>
+                <p>We handle all documents, insurance, and registration for you.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our team is always ready to help you with any question.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="section-title">
+            <span>Why Choose Us</span>
+            <h2>Trusted by Thousands</h2>
+            <p>We provide the best car buying experience with verified listings and secure transactions.</p>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-item">
+                <div class="stat-number" data-target="15" data-suffix="K+">0K+</div>
+                <div class="stat-label">Cars Sold</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number" data-target="8" data-suffix="K+">0K+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number" data-target="250" data-suffix="+">0+</div>
+                <div class="stat-label">Trusted Dealers</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number" data-target="12" data-suffix="+">0+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Fast & Easy</h3>
+                <p>Find and buy your car in just a few clicks with our simple process.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Secure Payment</h3>
+                <p>All transactions are protected with bank-level security.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Best Quality</h3>
+                <p>Every car is inspected and verified by our expert team.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-title">
+            <span>Testimonials</span>
+            <h2>What Our Clients Say</h2>
+            <p>Real reviews from people who found their perfect car with us.</p>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Amazing experience! Found my dream car in just 2 days. The team was super helpful and the whole process was smooth."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div>
+                        <h4>James Miller</h4>
+                        <span>BMW M4 Owner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Sold my old car within a week. Great platform, verified buyers, and the payment was secure. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div>
+                        <h4>Sarah Kim</h4>
+                        <span>Sold a Tesla</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <script src="app.js"></script>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The inspection service saved me from buying a bad car. Their team is professional and honest. Will use again!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                        <h4>Michael Ross</h4>
+                        <span>Audi A6 Owner</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="cta-content">
+            <h2>Ready to Find Your Perfect Car?</h2>
+            <p>Join thousands of happy customers who found their dream car with us. Start browsing today.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn-primary" data-action="browse">Browse Cars</a>
+                <a href="#" class="cta-btn-secondary" data-action="contact">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="section-title">
+            <span>Top Brands</span>
+            <h2>Browse by Brand</h2>
+            <p>Choose from the world's most trusted car manufacturers.</p>
+        </div>
+
+        <div class="brands-grid">
+
+            <a href="#" class="brand-card" data-brand="BMW">
+                <img src="https://www.carlogos.org/car-logos/bmw-logo.png" alt="BMW">
+                <span>BMW</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Mercedes">
+                <img src="https://www.carlogos.org/car-logos/mercedes-benz-logo.png" alt="Mercedes">
+                <span>Mercedes</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Audi">
+                <img src="https://www.carlogos.org/car-logos/audi-logo.png" alt="Audi">
+                <span>Audi</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Tesla">
+                <img src="https://www.carlogos.org/car-logos/tesla-logo.png" alt="Tesla">
+                <span>Tesla</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Toyota">
+                <img src="https://www.carlogos.org/car-logos/toyota-logo.png" alt="Toyota">
+                <span>Toyota</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Honda">
+                <img src="https://www.carlogos.org/car-logos/honda-logo.png" alt="Honda">
+                <span>Honda</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Ford">
+                <img src="https://www.carlogos.org/car-logos/ford-logo.png" alt="Ford">
+                <span>Ford</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Volkswagen">
+                <img src="https://www.carlogos.org/car-logos/volkswagen-logo.png" alt="Volkswagen">
+                <span>Volkswagen</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Nissan">
+                <img src="https://www.carlogos.org/car-logos/nissan-logo.png" alt="Nissan">
+                <span>Nissan</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Hyundai">
+                <img src="https://www.carlogos.org/car-logos/hyundai-logo.png" alt="Hyundai">
+                <span>Hyundai</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Chevrolet">
+                <img src="https://www.carlogos.org/car-logos/chevrolet-logo.png" alt="Chevrolet">
+                <span>Chevrolet</span>
+            </a>
+
+            <a href="#" class="brand-card" data-brand="Kia">
+                <img src="https://www.carlogos.org/car-logos/kia-logo.png" alt="Kia">
+                <span>Kia</span>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="section-title">
+            <span>Get In Touch</span>
+            <h2>Contact Us</h2>
+            <p>Have a question? Send us a message and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" id="contactName" placeholder="Your Name" required>
+                    <input type="email" id="contactEmail" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="contactSubject" placeholder="Subject" required>
+                <textarea id="contactText" placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-car"></i>
+                    <span>Car Market</span>
+                </div>
+                <p>Your trusted partner for buying and selling cars. Quality vehicles, verified sellers, and secure transactions.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Cars</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Sedan</a></li>
+                    <li><a href="#">SUV</a></li>
+                    <li><a href="#">Sports Car</a></li>
+                    <li><a href="#">Electric</a></li>
+                    <li><a href="#">Hybrid</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Car Market. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
